@@ -1,0 +1,108 @@
+﻿Build started 6/28/2015 9:10:55 PM.
+     1>Project "C:\Users\Evan\Desktop\snes9x-master\win32\snes9xw.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\Snes9X.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\FMOD\api\lib" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\FMODEx_x64\api\lib" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\FMODEx\api\lib" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\i386" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\zlib\lib" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\libPNG\lib" /LIBPATH:"C:\Users\Evan\Desktop\snes9x-master\win32\..\ftdi" libpng.lib comctl32.lib winmm.lib opengl32.lib glu32.lib wsock32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib vfw32.lib zlib.lib msxml2.lib shlwapi.lib ftd2xx.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib Delayimp.lib /DELAYLOAD:fmod.dll /DELAYLOAD:fmodex.dll /MANIFEST /MANIFESTUAC:NO /manifest:embed /DEBUG /PDB:".\Debug\snes9x-debug.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Snes9X.lib" /MACHINE:X86 /SAFESEH .\Debug\snes9x.res
+         .\Debug\bsx.obj
+         .\Debug\c4.obj
+         .\Debug\c4emu.obj
+         .\Debug\cheats.obj
+         .\Debug\cheats2.obj
+         .\Debug\clip.obj
+         .\Debug\conffile.obj
+         .\Debug\controls.obj
+         .\Debug\cpu.obj
+         .\Debug\cpuexec.obj
+         .\Debug\cpuops.obj
+         .\Debug\crosshairs.obj
+         .\Debug\debug.obj
+         .\Debug\dma.obj
+         .\Debug\dsp.obj
+         .\Debug\dsp1.obj
+         .\Debug\dsp2.obj
+         .\Debug\dsp3.obj
+         .\Debug\dsp4.obj
+         .\Debug\fxemu.obj
+         .\Debug\fxinst.obj
+         .\Debug\gfx.obj
+         .\Debug\globals.obj
+         .\Debug\loadzip.obj
+         .\Debug\logger.obj
+         .\Debug\memmap.obj
+         .\Debug\movie.obj
+         .\Debug\netplay.obj
+         .\Debug\obc1.obj
+         .\Debug\ppu.obj
+         .\Debug\sa1.obj
+         .\Debug\sa1cpu.obj
+         .\Debug\screenshot.obj
+         .\Debug\sdd1.obj
+         .\Debug\sdd1emu.obj
+         .\Debug\server.obj
+         .\Debug\seta.obj
+         .\Debug\seta010.obj
+         .\Debug\seta011.obj
+         .\Debug\seta018.obj
+         .\Debug\snapshot.obj
+         .\Debug\snes9x.obj
+         .\Debug\Snescast.obj
+         .\Debug\spc7110.obj
+         .\Debug\srtc.obj
+         .\Debug\statemanager.obj
+         .\Debug\stream.obj
+         .\Debug\tile.obj
+         .\Debug\ioapi.obj
+         .\Debug\iowin32.obj
+         .\Debug\mztools.obj
+         .\Debug\unzip.obj
+         .\Debug\zip.obj
+         .\Debug\_tfwopen.obj
+         .\Debug\AVIOutput.obj
+         .\Debug\CXML.obj
+         .\Debug\InputCustom.obj
+         .\Debug\render.obj
+         .\Debug\wconfig.obj
+         .\Debug\win32.obj
+         .\Debug\win32_display.obj
+         .\Debug\win32_sound.obj
+         .\Debug\wsnes9x.obj
+         .\Debug\CDirectSound.obj
+         .\Debug\CFMOD.obj
+         .\Debug\CFMODEx.obj
+         .\Debug\CXAudio2.obj
+         .\Debug\CCGShader.obj
+         .\Debug\CD3DCG.obj
+         .\Debug\CDirect3D.obj
+         .\Debug\CDirectDraw.obj
+         .\Debug\cgFunctions.obj
+         .\Debug\CGLCG.obj
+         .\Debug\COpenGL.obj
+         .\Debug\7zlzma.obj
+         .\Debug\crc32.obj
+         .\Debug\iiostrm.obj
+         .\Debug\inbyte.obj
+         .\Debug\jma.obj
+         .\Debug\lzma.obj
+         .\Debug\lzmadec.obj
+         ".\Debug\s9x-jma.obj"
+         .\Debug\winout.obj
+         .\Debug\apu.obj
+         .\Debug\sdsp.obj
+         .\Debug\SPC_DSP.obj
+         .\Debug\smp.obj
+         .\Debug\smp_state.obj
+         .\Debug\2xsai.obj
+         .\Debug\blit.obj
+         .\Debug\epx.obj
+         .\Debug\hq2x.obj
+         .\Debug\snes_ntsc.obj
+         .\Debug\xbrz.obj
+     1>LINK : warning LNK4199: /DELAYLOAD:fmod.dll ignored; no imports found from fmod.dll
+     1>LINK : warning LNK4199: /DELAYLOAD:fmodex.dll ignored; no imports found from fmodex.dll
+         snes9xw.vcxproj -> C:\Users\Evan\Desktop\snes9x-master\win32\.\Debug\Snes9X.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\Debug\Snes9X.bsc" .\Debug\bsx.sbr .\Debug\c4.sbr .\Debug\c4emu.sbr .\Debug\cheats.sbr .\Debug\cheats2.sbr .\Debug\clip.sbr .\Debug\conffile.sbr .\Debug\controls.sbr .\Debug\cpu.sbr .\Debug\cpuexec.sbr .\Debug\cpuops.sbr .\Debug\crosshairs.sbr .\Debug\debug.sbr .\Debug\dma.sbr .\Debug\dsp.sbr .\Debug\dsp1.sbr .\Debug\dsp2.sbr .\Debug\dsp3.sbr .\Debug\dsp4.sbr .\Debug\fxemu.sbr .\Debug\fxinst.sbr .\Debug\gfx.sbr .\Debug\globals.sbr .\Debug\loadzip.sbr .\Debug\logger.sbr .\Debug\memmap.sbr .\Debug\movie.sbr .\Debug\netplay.sbr .\Debug\obc1.sbr .\Debug\ppu.sbr .\Debug\sa1.sbr .\Debug\sa1cpu.sbr .\Debug\screenshot.sbr .\Debug\sdd1.sbr .\Debug\sdd1emu.sbr .\Debug\server.sbr .\Debug\seta.sbr .\Debug\seta010.sbr .\Debug\seta011.sbr .\Debug\seta018.sbr .\Debug\snapshot.sbr .\Debug\snes9x.sbr .\Debug\Snescast.sbr .\Debug\spc7110.sbr .\Debug\srtc.sbr .\Debug\statemanager.sbr .\Debug\stream.sbr .\Debug\tile.sbr .\Debug\ioapi.sbr .\Debug\iowin32.sbr .\Debug\mztools.sbr .\Debug\unzip.sbr .\Debug\zip.sbr .\Debug\_tfwopen.sbr .\Debug\AVIOutput.sbr .\Debug\CXML.sbr .\Debug\InputCustom.sbr .\Debug\render.sbr .\Debug\wconfig.sbr .\Debug\win32.sbr .\Debug\win32_display.sbr .\Debug\win32_sound.sbr .\Debug\wsnes9x.sbr .\Debug\CDirectSound.sbr .\Debug\CFMOD.sbr .\Debug\CFMODEx.sbr .\Debug\CXAudio2.sbr .\Debug\CCGShader.sbr .\Debug\CD3DCG.sbr .\Debug\CDirect3D.sbr .\Debug\CDirectDraw.sbr .\Debug\cgFunctions.sbr .\Debug\CGLCG.sbr .\Debug\COpenGL.sbr .\Debug\7zlzma.sbr .\Debug\crc32.sbr .\Debug\iiostrm.sbr .\Debug\inbyte.sbr .\Debug\jma.sbr .\Debug\lzma.sbr .\Debug\lzmadec.sbr ".\Debug\s9x-jma.sbr" .\Debug\winout.sbr .\Debug\apu.sbr .\Debug\sdsp.sbr .\Debug\SPC_DSP.sbr .\Debug\smp.sbr .\Debug\smp_state.sbr .\Debug\2xsai.sbr .\Debug\blit.sbr .\Debug\epx.sbr .\Debug\hq2x.sbr .\Debug\snes_ntsc.sbr .\Debug\xbrz.sbr
+     1>Done Building Project "C:\Users\Evan\Desktop\snes9x-master\win32\snes9xw.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:27.80

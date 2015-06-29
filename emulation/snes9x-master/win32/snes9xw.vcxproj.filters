@@ -2,43 +2,46 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Emu">
-      <UniqueIdentifier>{b5cc2f0d-48b1-4098-aa80-012bf2fde91c}</UniqueIdentifier>
+      <UniqueIdentifier>{c9189172-3569-4646-92ba-4831a823d62b}</UniqueIdentifier>
     </Filter>
     <Filter Include="UnZip">
-      <UniqueIdentifier>{0b1ceca6-986b-428d-8ee4-d8d3be362583}</UniqueIdentifier>
+      <UniqueIdentifier>{63e7de9d-c669-42fa-9ef7-63de64b369e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="GUI">
-      <UniqueIdentifier>{4a13e328-4b79-48a2-a44d-27a1a4f90fbd}</UniqueIdentifier>
+      <UniqueIdentifier>{b2d1cc17-49c5-43e4-8250-fcb468401bc6}</UniqueIdentifier>
     </Filter>
     <Filter Include="GUI\SoundDriver">
-      <UniqueIdentifier>{d81dd266-2f83-4551-9c18-067319834423}</UniqueIdentifier>
+      <UniqueIdentifier>{65a592cc-712a-49c8-96ca-936524f7dfdc}</UniqueIdentifier>
     </Filter>
     <Filter Include="GUI\VideoDriver">
-      <UniqueIdentifier>{a94f817d-5513-4c45-909f-b75c01f63b0c}</UniqueIdentifier>
+      <UniqueIdentifier>{c22d4369-8552-496e-aacb-7860ad396b80}</UniqueIdentifier>
     </Filter>
     <Filter Include="i386">
-      <UniqueIdentifier>{f48483e9-ed1d-4820-bc4f-17815191dc2c}</UniqueIdentifier>
+      <UniqueIdentifier>{836f033d-1237-4190-ab46-6d79ee5de96a}</UniqueIdentifier>
     </Filter>
     <Filter Include="JMA">
-      <UniqueIdentifier>{a9636c94-51c1-43d0-8e46-8d6656c7bb5d}</UniqueIdentifier>
+      <UniqueIdentifier>{81f93d85-8a7d-422c-af5f-9b2bcc97df06}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource">
-      <UniqueIdentifier>{c472b700-ff23-4b8f-8a72-4a78a18e2d13}</UniqueIdentifier>
+      <UniqueIdentifier>{3e1f0c2b-65fc-46d2-98b2-731f95eb5bfd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource\Other">
-      <UniqueIdentifier>{e5bb2083-fb8f-4e6c-9251-157682aefb6f}</UniqueIdentifier>
+      <UniqueIdentifier>{6cad24ab-8be3-46b1-958d-3fc68e9e01e8}</UniqueIdentifier>
     </Filter>
     <Filter Include="APU">
-      <UniqueIdentifier>{e7997c6a-3a7d-42ed-b170-e6d16a508e41}</UniqueIdentifier>
+      <UniqueIdentifier>{171cdc9f-01e9-41e3-ab43-af28c92ec342}</UniqueIdentifier>
     </Filter>
     <Filter Include="APU\DSP">
-      <UniqueIdentifier>{0bea040f-0040-4c3e-b9f1-9a9dbb482ba1}</UniqueIdentifier>
+      <UniqueIdentifier>{e8b5e000-ba64-476e-b954-0515ec4594e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="APU\SMP">
-      <UniqueIdentifier>{861c8d5b-0f2f-4097-9c87-290bf0334b0c}</UniqueIdentifier>
+      <UniqueIdentifier>{7eada218-983f-4a76-8c18-5ab0ca3fd43f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Filter">
-      <UniqueIdentifier>{1e3e39fd-b2d2-4c3f-83b2-b5731ab8deee}</UniqueIdentifier>
+      <UniqueIdentifier>{7589da12-f144-4580-b5d5-a512ea1f1242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Snescast">
+      <UniqueIdentifier>{10ef531d-0f3c-4ab0-8943-88daf6abc40d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +242,9 @@
     </ClInclude>
     <ClInclude Include="..\filter\xbrz.h">
       <Filter>Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Snescast.h">
+      <Filter>Snescast</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -533,6 +539,9 @@
     <ClCompile Include="..\filter\xbrz.cpp">
       <Filter>Filter</Filter>
     </ClCompile>
+    <ClCompile Include="..\Snescast.cpp">
+      <Filter>Snescast</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="rsrc\nodrop.cur">
@@ -541,6 +550,7 @@
     <None Include="rsrc\rt_manif.bin">
       <Filter>Resource\Other</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\jma\license.txt">

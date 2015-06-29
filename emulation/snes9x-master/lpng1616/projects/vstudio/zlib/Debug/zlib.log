@@ -1,0 +1,32 @@
+﻿Build started 2/7/2015 8:22:55 PM.
+     1>Project "C:\Users\Evan\Desktop\snes9x-master\lpng1616\projects\vstudio\zlib\zlib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W0 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D Z_SOLO /Gm- /EHsc /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TC /analyze- /errorReport:prompt "..\..\..\..\zlib-1.2.8\adler32.c" "..\..\..\..\zlib-1.2.8\compress.c" "..\..\..\..\zlib-1.2.8\crc32.c" "..\..\..\..\zlib-1.2.8\deflate.c" "..\..\..\..\zlib-1.2.8\infback.c" "..\..\..\..\zlib-1.2.8\inffast.c" "..\..\..\..\zlib-1.2.8\inflate.c" "..\..\..\..\zlib-1.2.8\inftrees.c" "..\..\..\..\zlib-1.2.8\trees.c" "..\..\..\..\zlib-1.2.8\uncompr.c" "..\..\..\..\zlib-1.2.8\zutil.c"
+         adler32.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\adler32.c': No such file or directory
+         compress.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\compress.c': No such file or directory
+         crc32.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\crc32.c': No such file or directory
+         deflate.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\deflate.c': No such file or directory
+         infback.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\infback.c': No such file or directory
+         inffast.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\inffast.c': No such file or directory
+         inflate.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\inflate.c': No such file or directory
+         inftrees.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\inftrees.c': No such file or directory
+         trees.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\trees.c': No such file or directory
+         uncompr.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\uncompr.c': No such file or directory
+         zutil.c
+     1>c1 : fatal error C1083: Cannot open source file: '..\..\..\..\zlib-1.2.8\zutil.c': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Evan\Desktop\snes9x-master\lpng1616\projects\vstudio\zlib\zlib.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.32

@@ -183,18 +183,49 @@
 #include "apu/apu.h"
 #include "fxemu.h"
 #include "snapshot.h"
+
+#include "Snescast.h"
+#include <thread>
 #ifdef DEBUGGER
 #include "debug.h"
 #include "missing.h"
 #endif
 
-static inline void S9xReschedule (void);
+static inline void S9xReschedule(void);
 
+int test,test2;
+unsigned char test3;
+Snescast dev;
+snesaccess_t pkt;
+unsigned int pkt_dword;
+std::thread driver_thread(&Snescast::populate_buffers, &dev);
+int blah = 0;
 
-void S9xMainLoop (void)
+void get_ext_data() {
+	int i;
+	CHECK_INBLANK();
+			i = 0;
+			pkt_dword = dev.getdword();
+
+			format_snesaccess(pkt_dword, &pkt);
+
+			if (!pkt.apu && !pkt.read) {
+				S9xSetPPU(pkt.data, pkt.addr | 0x2100);
+			}
+}
+
+void render_snescast() {
+	CHECK_INBLANK();
+	if (dev.getbufsize() > 3) get_ext_data();
+}
+
+void S9xMainLoop(void)
 {
+	int i;
+	
 	for (;;)
 	{
+		for (i=0;i<32;i++) render_snescast();
 		if (CPU.NMILine)
 		{
 			if (Timings.NMITriggerPos <= CPU.Cycles)

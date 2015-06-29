@@ -1,0 +1,8 @@
+Reading config file C:\Users\Evan\Desktop\snes9x-master\win32/snes9x.conf.
+Saving	config file	C:\Users\Evan\Desktop\snes9x-master\win32/snes9x.conf
+Sound buffer size: 8192 (2048 samples)
+No ROM file header found.
+Map_HiROMMap
+"SNES MODULE DEMO" [checksum ok] HiROM, 2Mbits, ROM+RAM+BAT, PAL, SRAM:64Kbits, ID:TEST, CRC32:A2451755
+Sound buffer size: 8192 (2048 samples)
+Saving	config file	C:\Users\Evan\Desktop\snes9x-master\win32/snes9x.conf

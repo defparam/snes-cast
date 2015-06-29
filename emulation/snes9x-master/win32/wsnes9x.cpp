@@ -197,7 +197,6 @@
 #include <objidl.h>
 #include <shlwapi.h>
 #include <Shobjidl.h>
-#include <dbt.h>
 
 #include "wsnes9x.h"
 #include "win32_sound.h"
@@ -291,7 +290,6 @@ void S9xDetectJoypads();
 
 #define WM_CUSTKEYDOWN	(WM_USER+50)
 #define WM_CUSTKEYUP	(WM_USER+51)
-#define WM_SCANJOYPADS  (WM_APP+10)
 
 #ifdef UNICODE
 #define S9XW_SHARD_PATH SHARD_PATHW
@@ -723,33 +721,6 @@ void S9xMouseOn ()
 		else
 	        SetCursor (NULL);
 	}
-}
-
-void ControllerOptionsFromControllers()
-{
-   enum controllers controller[2];
-   int8 ids[4];
-   S9xGetController(0, &controller[0], &ids[0], &ids[1], &ids[2], &ids[3]);
-   S9xGetController(1, &controller[1], &ids[0], &ids[1], &ids[2], &ids[3]);
-
-   GUI.ControllerOption = SNES_JOYPAD;
-
-   if (controller[0] == CTL_JOYPAD && controller[1] == CTL_JOYPAD)
-      GUI.ControllerOption = SNES_JOYPAD;
-   else if (controller[0] == CTL_JOYPAD && controller[1] == CTL_MP5)
-      GUI.ControllerOption = SNES_MULTIPLAYER5;
-   else if (controller[0] == CTL_MP5 && controller[1] == CTL_MP5)
-      GUI.ControllerOption = SNES_MULTIPLAYER8;
-   else if (controller[0] == CTL_MOUSE && controller[1] == CTL_JOYPAD)
-      GUI.ControllerOption = SNES_MOUSE;
-   else if (controller[0] == CTL_JOYPAD && controller[1] == CTL_MOUSE)
-      GUI.ControllerOption = SNES_MOUSE_SWAPPED;
-   else if (controller[0] == CTL_JOYPAD && controller[1] == CTL_SUPERSCOPE)
-      GUI.ControllerOption = SNES_SUPERSCOPE;
-   else if (controller[0] == CTL_JOYPAD && controller[1] == CTL_JUSTIFIER && !ids[0])
-      GUI.ControllerOption = SNES_JUSTIFIER;
-   else if (controller[0] == CTL_JOYPAD && controller[1] == CTL_JUSTIFIER && ids[0])
-      GUI.ControllerOption = SNES_JUSTIFIER_2;
 }
 
 void ChangeInputDevice(void)
@@ -2700,10 +2671,6 @@ LRESULT CALLBACK WinProc(
 		break;
 #endif
     case WM_DEVICECHANGE:
-        if(wParam == DBT_DEVICEARRIVAL || wParam == DBT_DEVICEREMOVECOMPLETE || wParam == DBT_DEVNODES_CHANGED)
-            PostMessage(hWnd, WM_SCANJOYPADS, 0, 0);
-        break;
-    case WM_SCANJOYPADS:
         S9xDetectJoypads();
         break;
     }
@@ -2811,32 +2778,28 @@ VOID CALLBACK HotkeyTimer( UINT idEvent, UINT uMsg, DWORD dwUser, DWORD dw1, DWO
 		if(GUI.JoystickHotkeys)
 		{
 			static int counter = 0;
-			static uint32 joyState[6][53];
-            for(int j = 0 ; j < 6 ; j++)
-            {
-			    for(int i = 0 ; i < 53 ; i++)
-			    {
-                    if(counter%2 && !joyState[j][i])
-					    continue;
+			static uint32 joyState [256];
+			for(int i = 0 ; i < 255 ; i++)
+			{
+				if(counter%2 && !joyState[i])
+					continue;
 
-                    WPARAM wp = (WPARAM)(0x8000 | (j << 8) | i);
-				    bool active = !S9xGetState(wp);
-				    if(active)
-				    {
-					    if(joyState[j][i] < ULONG_MAX) // 0xffffffffUL
-						    joyState[j][i]++;
-					    if(joyState[j][i] == 1 || joyState[j][i] >= 12)
-						    PostMessage(GUI.hWnd, WM_CUSTKEYDOWN, wp,(LPARAM)(NULL));
-				    }
-				    else
-					    if(joyState[j][i])
-					    {
-						    joyState[j][i] = 0;
-						    PostMessage(GUI.hWnd, WM_CUSTKEYUP, wp,(LPARAM)(NULL));
-					    }
-			    }
-            }
-            counter++;
+				bool active = !S9xGetState(0x8000|i);
+				if(active)
+				{
+					if(joyState[i] < ULONG_MAX) // 0xffffffffUL
+						joyState[i]++;
+					if(joyState[i] == 1 || joyState[i] >= 12)
+						PostMessage(GUI.hWnd, WM_CUSTKEYDOWN, (WPARAM)(0x8000|i),(LPARAM)(NULL));
+				}
+				else
+					if(joyState[i])
+					{
+						joyState[i] = 0;
+						PostMessage(GUI.hWnd, WM_CUSTKEYUP, (WPARAM)(0x8000|i),(LPARAM)(NULL));
+					}
+			}
+			counter++;
 		}
 		if(GUI.BackgroundInput && !GUI.InactivePause)
 		{
@@ -3372,15 +3335,19 @@ int WINAPI WinMain(
 	SetCurrentDirectory(S9xGetDirectoryT(DEFAULT_DIR));
 
 	// Redirect stderr and stdout to file. It wouldn't go to any commandline anyway.
-	FILE* fout = freopen("stdout.txt", "w", stdout);
-	if(fout) setvbuf(fout, NULL, _IONBF, 0);
-	FILE* ferr = freopen("stderr.txt", "w", stderr);
-	if(ferr) setvbuf(ferr, NULL, _IONBF, 0);
+	//FILE* fout = freopen("stdout.txt", "w", stdout);
+	//if(fout) setvbuf(fout, NULL, _IONBF, 0);
+	//FILE* ferr = freopen("stderr.txt", "w", stderr);
+	//if(ferr) setvbuf(ferr, NULL, _IONBF, 0);
 
 	DWORD wSoundTimerRes;
 
 	LoadExts();
-
+	AllocConsole();
+	AllocConsole();
+	freopen("CONIN$", "r", stdin);
+	freopen("CONOUT$", "w", stdout);
+	freopen("CONOUT$", "w", stderr);
 	WinRegisterConfigItems ();
 
 	ConfigFile::SetAlphaSort(false);
@@ -3391,8 +3358,6 @@ int WINAPI WinMain(
     const TCHAR *rom_filename = WinParseCommandLineAndLoadConfigFile (GetCommandLine());
     WinSaveConfigFile ();
 	WinLockConfigFile ();
-
-    ControllerOptionsFromControllers();
 
     WinInit (hInstance);
 	if(GUI.HideMenu)
@@ -3952,38 +3917,41 @@ static void CheckMenuStates ()
 	SetMenuItemInfo (GUI.hMenu, ID_EMULATION_BACKGROUNDINPUT, FALSE, &mii);
 
 	UINT validFlag;
-    ControllerOptionsFromControllers();
+	enum controllers controller[2];
+	int8 ids[4];
+	S9xGetController(0, &controller[0], &ids[0],&ids[1],&ids[2],&ids[3]);
+	S9xGetController(1, &controller[1], &ids[0],&ids[1],&ids[2],&ids[3]);
 
 	validFlag = (((1<<SNES_JOYPAD) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_JOYPAD ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_JOYPAD) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_SNES_JOYPAD, FALSE, &mii);
 
 	validFlag = (((1<<SNES_MULTIPLAYER5) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_MULTIPLAYER5 ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_MP5) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_ENABLE_MULTITAP, FALSE, &mii);
 
 	validFlag = (((1<<SNES_MULTIPLAYER8) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_MULTIPLAYER8 ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_MP5 && controller[1] == CTL_MP5) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_MULTITAP8, FALSE, &mii);
 
 	validFlag = (((1<<SNES_MOUSE) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_MOUSE ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_MOUSE && controller[1] == CTL_JOYPAD) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_MOUSE_TOGGLE, FALSE, &mii);
 
 	validFlag = (((1<<SNES_MOUSE_SWAPPED) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_MOUSE_SWAPPED ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_MOUSE) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_MOUSE_SWAPPED, FALSE, &mii);
 
 	validFlag = (((1<<SNES_SUPERSCOPE) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_SUPERSCOPE ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_SUPERSCOPE) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_SCOPE_TOGGLE, FALSE, &mii);
 
 	validFlag = (((1<<SNES_JUSTIFIER) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_JUSTIFIER ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_JUSTIFIER && !ids[0]) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_JUSTIFIER, FALSE, &mii);
 
 	validFlag = (((1<<SNES_JUSTIFIER_2) & GUI.ValidControllerOptions) && (!S9xMovieActive() || !S9xMovieGetFrameCounter())) ? MFS_ENABLED : MFS_DISABLED;
-    mii.fState = validFlag | (GUI.ControllerOption == SNES_JUSTIFIER_2 ? MFS_CHECKED : MFS_UNCHECKED);
+	mii.fState = validFlag|((controller[0] == CTL_JOYPAD && controller[1] == CTL_JUSTIFIER && ids[0]) ? MFS_CHECKED : MFS_UNCHECKED);
     SetMenuItemInfo (GUI.hMenu, IDM_JUSTIFIERS, FALSE, &mii);
 
 	mii.fState = !Settings.StopEmulation ? MFS_ENABLED : MFS_DISABLED;
@@ -4059,12 +4027,7 @@ static bool LoadROM(const TCHAR *filename) {
 			S9xNPServerQueueSendingLoadROMRequest (Memory.ROMName);
 #endif
         if(GUI.rewindBufferSize)
-		{
-		#if !_WIN64
-			if (GUI.rewindBufferSize > 1024) GUI.rewindBufferSize = 1024;
-		#endif
             stateMan.init(GUI.rewindBufferSize * 1024 * 1024);
-		}
 	}
 
 	if(GUI.ControllerOption == SNES_SUPERSCOPE)

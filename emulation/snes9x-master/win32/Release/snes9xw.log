@@ -1,0 +1,172 @@
+﻿Build started 5/10/2015 1:45:53 PM.
+     1>Project "C:\Users\Evan\Desktop\snes9x-master\win32\snes9xw.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Evan\Desktop\snes9x-master\win32\\" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\\" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\\" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\zLib" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\unzip" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\FMOD\api\inc" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\..\libPNG\src" /I"C:\Users\Evan\Desktop\snes9x-master\win32\..\snes9x" /Zi /nologo /W2 /WX- /Ox /Ob2 /Oi /Ot /Oy /GL /D NDEBUG /D HAVE_LIBPNG /D JMA_SUPPORT /D ZLIB /D UNZIP_SUPPORT /D __WIN32__ /D FMODEX_SUPPORT /D NETPLAY_SUPPORT /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release\\" /Fd".\Release\vc120.pdb" /FR".\Release\\" /Gd /TP /analyze- /errorReport:prompt "..\..\..\Documents\fpga\snesdev\snes_spc-0.9.0\prj\apu\apu\Snescast.cpp" ..\bsx.cpp ..\c4.cpp ..\c4emu.cpp ..\cheats.cpp ..\cheats2.cpp ..\clip.cpp ..\conffile.cpp ..\controls.cpp ..\cpu.cpp ..\cpuexec.cpp ..\cpuops.cpp ..\crosshairs.cpp ..\debug.cpp ..\dma.cpp ..\dsp.cpp ..\dsp1.cpp ..\dsp2.cpp ..\dsp3.cpp ..\dsp4.cpp ..\fxemu.cpp ..\fxinst.cpp ..\gfx.cpp ..\globals.cpp ..\loadzip.cpp ..\logger.cpp ..\memmap.cpp ..\movie.cpp ..\netplay.cpp ..\obc1.cpp ..\ppu.cpp ..\sa1.cpp ..\sa1cpu.cpp ..\screenshot.cpp ..\sdd1.cpp ..\sdd1emu.cpp ..\server.cpp ..\seta.cpp ..\seta010.cpp ..\seta011.cpp ..\seta018.cpp ..\snapshot.cpp ..\snes9x.cpp ..\spc7110.cpp ..\srtc.cpp ..\statemanager.cpp ..\stream.cpp ..\tile.cpp _tfwopen.cpp AVIOutput.cpp CXML.cpp InputCustom.cpp render.cpp wconfig.cpp win32.cpp win32_display.cpp win32_sound.cpp wsnes9x.cpp CDirectSound.cpp CFMOD.cpp CFMODEx.cpp CXAudio2.cpp CCGShader.cpp CD3DCG.cpp CDirect3D.cpp CDirectDraw.cpp cgFunctions.cpp CGLCG.cpp COpenGL.cpp ..\jma\7zlzma.cpp ..\jma\crc32.cpp ..\jma\iiostrm.cpp ..\jma\inbyte.cpp ..\jma\jma.cpp ..\jma\lzma.cpp ..\jma\lzmadec.cpp "..\jma\s9x-jma.cpp" ..\jma\winout.cpp ..\apu\apu.cpp ..\apu\bapu\dsp\sdsp.cpp ..\apu\bapu\dsp\SPC_DSP.cpp ..\apu\bapu\smp\smp.cpp ..\apu\bapu\smp\smp_state.cpp ..\filter\2xsai.cpp ..\filter\blit.cpp ..\filter\epx.cpp ..\filter\hq2x.cpp ..\filter\xbrz.cpp
+         Snescast.cpp
+     1>c:\users\evan\documents\fpga\snesdev\snes_spc-0.9.0\prj\apu\apu\Snescast.h(6): fatal error C1083: Cannot open include file: 'ftd2xx.h': No such file or directory
+         bsx.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         c4.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         c4emu.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cheats.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cheats2.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         clip.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         conffile.cpp
+     1>c:\users\evan\desktop\snes9x-master\unzip/unzip.h(53): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         controls.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cpu.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cpuexec.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cpuops.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         crosshairs.cpp
+     1>..\crosshairs.cpp(180): fatal error C1083: Cannot open include file: 'png.h': No such file or directory
+         debug.cpp
+         dma.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         dsp.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         dsp1.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         dsp2.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         dsp3.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         dsp4.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         Compiling...
+         fxemu.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         fxinst.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         gfx.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         globals.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         loadzip.cpp
+     1>c:\users\evan\desktop\snes9x-master\unzip/unzip.h(53): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         logger.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         memmap.cpp
+     1>c:\users\evan\desktop\snes9x-master\unzip/unzip.h(53): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         movie.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         netplay.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         obc1.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         ppu.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         sa1.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         sa1cpu.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         screenshot.cpp
+     1>..\screenshot.cpp(180): fatal error C1083: Cannot open include file: 'png.h': No such file or directory
+         sdd1.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         sdd1emu.cpp
+         server.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         seta.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         seta010.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         seta011.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         Compiling...
+         seta018.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         snapshot.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         snes9x.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         spc7110.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         srtc.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         statemanager.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         stream.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\unzip\unzip.h(53): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         tile.cpp
+     1>c:\users\evan\desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         _tfwopen.cpp
+         AVIOutput.cpp
+         CXML.cpp
+         InputCustom.cpp
+         render.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         wconfig.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         win32.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         win32_display.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         win32_sound.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         wsnes9x.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cgFunctions.h(187): fatal error C1083: Cannot open include file: 'cg/cg.h': No such file or directory
+         CDirectSound.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         CFMOD.cpp
+         Compiling...
+         CFMODEx.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\CFMODEx.h(3): fatal error C1083: Cannot open include file: '../../FMODEx/api/inc/fmod.hpp': No such file or directory
+         CXAudio2.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         CCGShader.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cgFunctions.h(187): fatal error C1083: Cannot open include file: 'cg/cg.h': No such file or directory
+         CD3DCG.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\CD3DCG.h(182): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         CDirect3D.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cdirect3d.h(184): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+         CDirectDraw.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\../snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         cgFunctions.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cgFunctions.h(187): fatal error C1083: Cannot open include file: 'cg/cg.h': No such file or directory
+         CGLCG.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cgFunctions.h(187): fatal error C1083: Cannot open include file: 'cg/cg.h': No such file or directory
+         COpenGL.cpp
+     1>c:\users\evan\desktop\snes9x-master\win32\cgFunctions.h(187): fatal error C1083: Cannot open include file: 'cg/cg.h': No such file or directory
+         7zlzma.cpp
+         crc32.cpp
+         iiostrm.cpp
+         inbyte.cpp
+         jma.cpp
+         lzma.cpp
+         lzmadec.cpp
+         s9x-jma.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         winout.cpp
+         apu.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         sdsp.cpp
+     1>..\apu\bapu\dsp\sdsp.cpp(1): fatal error C1083: Cannot open include file: 'snes/snes.hpp': No such file or directory
+         Compiling...
+         SPC_DSP.cpp
+         smp.cpp
+     1>..\apu\bapu\smp\smp.cpp(4): fatal error C1083: Cannot open include file: 'snes/snes.hpp': No such file or directory
+         smp_state.cpp
+     1>..\apu\bapu\smp\smp_state.cpp(1): fatal error C1083: Cannot open include file: 'snes/snes.hpp': No such file or directory
+         2xsai.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         blit.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         epx.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         hq2x.cpp
+     1>C:\Users\Evan\Desktop\snes9x-master\snes9x.h(191): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+         xbrz.cpp
+     1>Done Building Project "C:\Users\Evan\Desktop\snes9x-master\win32\snes9xw.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:54.56

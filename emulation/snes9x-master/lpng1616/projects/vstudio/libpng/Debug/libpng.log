@@ -1,0 +1,11 @@
+﻿Build started 2/7/2015 8:22:55 PM.
+     1>Project "C:\Users\Evan\Desktop\snes9x-master\lpng1616\projects\vstudio\libpng\libpng.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\..\..\..\zlib-1.2.8" /Zi /nologo /W4 /WX /Od /Oi /Oy- /GL /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D _WINDLL /D _MBCS /GF /Gm- /EHsc /RTC1 /MDd /GS /Gy /fp:precise /fp:except- /Zc:wchar_t- /Zc:forScope /Yc"pngpriv.h" /Fp"Debug\libpng16.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TC /wd4996 /wd4127 /analyze- /errorReport:prompt ..\..\..\png.c
+         png.c
+     1>c:\users\evan\desktop\snes9x-master\lpng1616\pngstruct.h(31): fatal error C1083: Cannot open include file: 'zlib.h': No such file or directory
+     1>Done Building Project "C:\Users\Evan\Desktop\snes9x-master\lpng1616\projects\vstudio\libpng\libpng.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.74
