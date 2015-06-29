@@ -1,0 +1,138 @@
+Flow report for snes_cast
+Sun Jun 28 20:29:06 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Sun Jun 28 20:29:06 2015       ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
+; Revision Name                      ; snes_cast                                   ;
+; Top-level Entity Name              ; snes_cast_top                               ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE22F17C8                                ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 346 / 22,320 ( 2 % )                        ;
+;     Total combinational functions  ; 218 / 22,320 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 273 / 22,320 ( 1 % )                        ;
+; Total registers                    ; 273                                         ;
+; Total pins                         ; 46 / 154 ( 30 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 262,144 / 608,256 ( 43 % )                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/28/2015 20:28:26 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; snes_cast           ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                             ;
++-------------------------------------+---------------------------------------+---------------+---------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name   ; Section Id     ;
++-------------------------------------+---------------------------------------+---------------+---------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 151733498364.143554850608244          ; --            ; --            ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --            ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --            ; --             ;
+; ENABLE_SIGNALTAP                    ; On                                    ; --            ; --            ; --             ;
+; IP_GENERATED_DEVICE_FAMILY          ; {Cyclone IV E}                        ; --            ; --            ; --             ;
+; IP_TOOL_NAME                        ; FIFO                                  ; --            ; --            ; --             ;
+; IP_TOOL_VERSION                     ; 14.0                                  ; --            ; --            ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --            ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --            ; --             ;
+; MISC_FILE                           ; crossfifo_bb.v                        ; --            ; --            ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --            ; --            ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; snes_cast_top ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; snes_cast_top ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; snes_cast_top ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --            ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --            ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --            ; --             ;
+; TOP_LEVEL_ENTITY                    ; snes_cast_top                         ; snes_cast     ; --            ; --             ;
+; USE_SIGNALTAP_FILE                  ; output_files/stp1.stp                 ; --            ; --            ; --             ;
++-------------------------------------+---------------------------------------+---------------+---------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 580 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:16     ; 1.6                     ; 1291 MB             ; 00:00:19                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 515 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 581 MB              ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 463 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:32     ; --                      ; --                  ; 00:00:34                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; Evan-PC          ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Evan-PC          ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Evan-PC          ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Evan-PC          ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Evan-PC          ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off snes_cast -c snes_cast
+quartus_fit --read_settings_files=off --write_settings_files=off snes_cast -c snes_cast
+quartus_asm --read_settings_files=off --write_settings_files=off snes_cast -c snes_cast
+quartus_sta snes_cast -c snes_cast
+quartus_eda --read_settings_files=off --write_settings_files=off snes_cast -c snes_cast
+
+
+

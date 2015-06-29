@@ -1,0 +1,678 @@
+Analysis & Synthesis report for snes_cast
+Sun Jun 28 20:28:31 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |snes_cast_top|ftdi_state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated
+ 16. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_877:rdptr_g1p
+ 17. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p
+ 18. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram
+ 19. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_ue9:rs_brp
+ 20. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:rs_bwp
+ 21. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp
+ 22. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp|dffpipe_te9:dffpipe16
+ 23. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:ws_brp
+ 24. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:ws_bwp
+ 25. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp
+ 26. Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp|dffpipe_ve9:dffpipe19
+ 27. Parameter Settings for User Entity Instance: Top-level Entity: |snes_cast_top
+ 28. Parameter Settings for User Entity Instance: crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+ 29. Port Connectivity Checks: "crossfifo:cc"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 28 20:28:31 2015       ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
+; Revision Name                      ; snes_cast                                   ;
+; Top-level Entity Name              ; snes_cast_top                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 392                                         ;
+;     Total combinational functions  ; 218                                         ;
+;     Dedicated logic registers      ; 273                                         ;
+; Total registers                    ; 273                                         ;
+; Total pins                         ; 46                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 262,144                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C8       ;                    ;
+; Top-level entity name                                                      ; snes_cast_top      ; snes_cast          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; crossfifo.v                      ; yes             ; User Wizard-Generated File   ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/crossfifo.v               ;         ;
+; snes_cast.v                      ; yes             ; User Verilog HDL File        ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/snes_cast.v               ;         ;
+; dcfifo_mixed_widths.tdf          ; yes             ; Megafunction                 ; f:/altera/14.0/quartus/libraries/megafunctions/dcfifo_mixed_widths.tdf     ;         ;
+; db/dcfifo_d9n1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/dcfifo_d9n1.tdf        ;         ;
+; db/a_gray2bin_aib.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/a_gray2bin_aib.tdf     ;         ;
+; db/a_graycounter_877.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/a_graycounter_877.tdf  ;         ;
+; db/a_graycounter_5lc.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/a_graycounter_5lc.tdf  ;         ;
+; db/altsyncram_sd11.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/altsyncram_sd11.tdf    ;         ;
+; db/decode_d87.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/decode_d87.tdf         ;         ;
+; db/mux_t28.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/mux_t28.tdf            ;         ;
+; db/dffpipe_ue9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/dffpipe_ue9.tdf        ;         ;
+; db/dffpipe_se9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/dffpipe_se9.tdf        ;         ;
+; db/alt_synch_pipe_uld.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/alt_synch_pipe_uld.tdf ;         ;
+; db/dffpipe_te9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/dffpipe_te9.tdf        ;         ;
+; db/alt_synch_pipe_vld.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/alt_synch_pipe_vld.tdf ;         ;
+; db/dffpipe_ve9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/dffpipe_ve9.tdf        ;         ;
+; db/cmpr_r76.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/cmpr_r76.tdf           ;         ;
+; db/cmpr_t76.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/cmpr_t76.tdf           ;         ;
+; db/cntr_64e.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evan/Documents/GitHub/snes-cast/quartus/db/cntr_64e.tdf           ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 392            ;
+;                                             ;                ;
+; Total combinational functions               ; 218            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 147            ;
+;     -- 3 input functions                    ; 36             ;
+;     -- <=2 input functions                  ; 35             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 204            ;
+;     -- arithmetic mode                      ; 14             ;
+;                                             ;                ;
+; Total registers                             ; 273            ;
+;     -- Dedicated logic registers            ; 273            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 46             ;
+; Total memory bits                           ; 262144         ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+; Maximum fan-out node                        ; official_rst_n ;
+; Maximum fan-out                             ; 272            ;
+; Total fan-out                               ; 2737           ;
+; Average fan-out                             ; 4.45           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                              ;
++-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                       ; Library Name ;
++-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |snes_cast_top                                            ; 218 (88)          ; 273 (115)    ; 262144      ; 0            ; 0       ; 0         ; 46   ; 0            ; |snes_cast_top                                                                                                                                            ; work         ;
+;    |crossfifo:cc|                                         ; 130 (0)           ; 158 (0)      ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc                                                                                                                               ; work         ;
+;       |dcfifo_mixed_widths:dcfifo_mixed_widths_component| ; 130 (0)           ; 158 (0)      ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component                                                                             ; work         ;
+;          |dcfifo_d9n1:auto_generated|                     ; 130 (14)          ; 158 (44)     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated                                                  ; work         ;
+;             |a_gray2bin_aib:rdptr_g_gray2bin|             ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_gray2bin_aib:rdptr_g_gray2bin                  ; work         ;
+;             |a_gray2bin_aib:rs_dgwp_gray2bin|             ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_gray2bin_aib:rs_dgwp_gray2bin                  ; work         ;
+;             |a_graycounter_5lc:wrptr_g1p|                 ; 27 (27)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p                      ; work         ;
+;             |a_graycounter_877:rdptr_g1p|                 ; 28 (28)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_877:rdptr_g1p                      ; work         ;
+;             |alt_synch_pipe_uld:rs_dgwp|                  ; 0 (0)             ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp                       ; work         ;
+;                |dffpipe_te9:dffpipe16|                    ; 0 (0)             ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp|dffpipe_te9:dffpipe16 ; work         ;
+;             |alt_synch_pipe_vld:ws_dgrp|                  ; 0 (0)             ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp                       ; work         ;
+;                |dffpipe_ve9:dffpipe19|                    ; 0 (0)             ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp|dffpipe_ve9:dffpipe19 ; work         ;
+;             |altsyncram_sd11:fifo_ram|                    ; 22 (2)            ; 4 (4)        ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram                         ; work         ;
+;                |decode_d87:decode12|                      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram|decode_d87:decode12     ; work         ;
+;                |mux_t28:mux13|                            ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram|mux_t28:mux13           ; work         ;
+;             |cmpr_r76:rdempty_eq_comp|                    ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cmpr_r76:rdempty_eq_comp                         ; work         ;
+;             |cmpr_r76:wrfull_eq_comp|                     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cmpr_r76:wrfull_eq_comp                          ; work         ;
+;             |cntr_64e:cntr_b|                             ; 4 (4)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cntr_64e:cntr_b                                  ; work         ;
+;             |dffpipe_se9:rs_bwp|                          ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:rs_bwp                               ; work         ;
+;             |dffpipe_ue9:rs_brp|                          ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |snes_cast_top|crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_ue9:rs_brp                               ; work         ;
++-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 32           ; 32768        ; 8            ; 262144 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                         ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance             ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+; Altera ; FIFO         ; 14.0    ; N/A          ; N/A          ; |snes_cast_top|crossfifo:cc ; crossfifo.v     ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |snes_cast_top|ftdi_state                                                     ;
++------------------------+---------------------+------------------------+-----------------------+
+; Name                   ; ftdi_state.REG_LOAD ; ftdi_state.REG_SENDING ; ftdi_state.REG_LOADED ;
++------------------------+---------------------+------------------------+-----------------------+
+; ftdi_state.REG_LOAD    ; 0                   ; 0                      ; 0                     ;
+; ftdi_state.REG_LOADED  ; 1                   ; 0                      ; 1                     ;
+; ftdi_state.REG_SENDING ; 1                   ; 1                      ; 0                     ;
++------------------------+---------------------+------------------------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                               ;
++-----------------------------------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                                               ; Reason for Removal ;
++-----------------------------------------------------------------------------------------------------------------------------+--------------------+
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:rs_bwp|dffe15a[6..13] ; Lost fanout        ;
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_ue9:rs_brp|dffe14a[8..15] ; Lost fanout        ;
+; Total Number of Removed Registers = 16                                                                                      ;                    ;
++-----------------------------------------------------------------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 273   ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 239   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 103   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                   ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------+
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p|counter8a0    ; 6       ;
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_877:rdptr_g1p|sub_parity6a0 ; 1       ;
+; crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p|parity9       ; 4       ;
+; Total number of inverted registers = 3                                                                                              ;         ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |snes_cast_top|seq[3]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |snes_cast_top|data[7]           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |snes_cast_top|addr[5]           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |snes_cast_top|FTDI_data[5]~reg0 ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |snes_cast_top|Selector1         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated ;
++---------------------------------------+-------+------+-----------------------------------------------------------+
+; Assignment                            ; Value ; From ; To                                                        ;
++---------------------------------------+-------+------+-----------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION       ; OFF   ; -    ; -                                                         ;
+; REMOVE_DUPLICATE_REGISTERS            ; OFF   ; -    ; -                                                         ;
+; SYNCHRONIZER_IDENTIFICATION           ; OFF   ; -    ; -                                                         ;
+; SYNCHRONIZATION_REGISTER_CHAIN_LENGTH ; 2     ; -    ; -                                                         ;
++---------------------------------------+-------+------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_877:rdptr_g1p ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                                           ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; sub_parity6a0                                                                                                ;
+; POWER_UP_LEVEL ; LOW   ; -    ; parity5                                                                                                      ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                                                                           ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; counter8a0                                                                                                   ;
+; POWER_UP_LEVEL ; HIGH  ; -    ; parity9                                                                                                      ;
++----------------+-------+------+--------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                          ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                           ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_ue9:rs_brp ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                  ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:rs_bwp ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                  ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To                                                                            ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -                                                                             ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -                                                                             ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp|dffpipe_te9:dffpipe16 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                               ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:ws_brp ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                  ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:ws_bwp ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                  ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+; Assignment                  ; Value                  ; From ; To                                                                            ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+; X_ON_VIOLATION_OPTION       ; OFF                    ; -    ; -                                                                             ;
+; SYNCHRONIZER_IDENTIFICATION ; FORCED_IF_ASYNCHRONOUS ; -    ; -                                                                             ;
++-----------------------------+------------------------+------+-------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp|dffpipe_ve9:dffpipe19 ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                               ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                ;
++---------------------------------+-------+------+------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |snes_cast_top ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; REG_LOAD       ; 00    ; Unsigned Binary                                      ;
+; REG_LOADED     ; 01    ; Unsigned Binary                                      ;
+; REG_SENDING    ; 10    ; Unsigned Binary                                      ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component ;
++--------------------------+-------------+--------------------------------------------------------------------+
+; Parameter Name           ; Value       ; Type                                                               ;
++--------------------------+-------------+--------------------------------------------------------------------+
+; ACF_DISABLE_MLAB_RAM_USE ; FALSE       ; Untyped                                                            ;
+; ADD_RAM_OUTPUT_REGISTER  ; OFF         ; Untyped                                                            ;
+; ADD_USEDW_MSB_BIT        ; OFF         ; Untyped                                                            ;
+; CLOCKS_ARE_SYNCHRONIZED  ; FALSE       ; Untyped                                                            ;
+; DELAY_RDUSEDW            ; 1           ; Untyped                                                            ;
+; DELAY_WRUSEDW            ; 1           ; Untyped                                                            ;
+; LPM_NUMWORDS             ; 8192        ; Signed Integer                                                     ;
+; LPM_SHOWAHEAD            ; ON          ; Untyped                                                            ;
+; LPM_WIDTH                ; 32          ; Signed Integer                                                     ;
+; LPM_WIDTH_R              ; 8           ; Signed Integer                                                     ;
+; LPM_WIDTHU               ; 13          ; Signed Integer                                                     ;
+; LPM_WIDTHU_R             ; 15          ; Signed Integer                                                     ;
+; MAXIMIZE_SPEED           ; 5           ; Untyped                                                            ;
+; OVERFLOW_CHECKING        ; ON          ; Untyped                                                            ;
+; RAM_BLOCK_TYPE           ; AUTO        ; Untyped                                                            ;
+; RDSYNC_DELAYPIPE         ; 4           ; Signed Integer                                                     ;
+; READ_ACLR_SYNCH          ; OFF         ; Untyped                                                            ;
+; UNDERFLOW_CHECKING       ; ON          ; Untyped                                                            ;
+; USE_EAB                  ; ON          ; Untyped                                                            ;
+; WRITE_ACLR_SYNCH         ; OFF         ; Untyped                                                            ;
+; WRSYNC_DELAYPIPE         ; 4           ; Signed Integer                                                     ;
+; CBXI_PARAMETER           ; dcfifo_d9n1 ; Untyped                                                            ;
++--------------------------+-------------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "crossfifo:cc"                                                                                                                            ;
++----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                                        ;
++----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------+
+; data[31..24]   ; Input  ; Info     ; Stuck at VCC                                                                                                                   ;
+; rdfull         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                            ;
+; rdusedw        ; Output ; Warning  ; Output or bidir port (15 bits) is wider than the port expression (14 bits) it drives; bit(s) "rdusedw[14..14]" have no fanouts ;
+; rdusedw[13..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                            ;
+; wrempty        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                            ;
+; wrfull         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                            ;
+; wrusedw        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                            ;
++----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 46                          ;
+; cycloneiii_ff         ; 273                         ;
+;     CLR               ; 168                         ;
+;     ENA               ; 32                          ;
+;     ENA CLR           ; 71                          ;
+;     SCLR              ; 2                           ;
+; cycloneiii_lcell_comb ; 219                         ;
+;     arith             ; 14                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 205                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 147                         ;
+; cycloneiii_ram_block  ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 3.37                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
+    Info: Processing started: Sun Jun 28 20:28:25 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off snes_cast -c snes_cast
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file crossfifo.v
+    Info (12023): Found entity 1: crossfifo
+Info (12021): Found 1 design units, including 1 entities, in source file snes_cast.v
+    Info (12023): Found entity 1: snes_cast_top
+Info (12127): Elaborating entity "snes_cast_top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at snes_cast.v(131): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at snes_cast.v(153): truncated value with size 32 to match size of target (4)
+Warning (10270): Verilog HDL Case Statement warning at snes_cast.v(215): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at snes_cast.v(215): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "crossfifo" for hierarchy "crossfifo:cc"
+Info (12128): Elaborating entity "dcfifo_mixed_widths" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component"
+Info (12130): Elaborated megafunction instantiation "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component"
+Info (12133): Instantiated megafunction "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component" with the following parameter:
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_numwords" = "8192"
+    Info (12134): Parameter "lpm_showahead" = "ON"
+    Info (12134): Parameter "lpm_type" = "dcfifo_mixed_widths"
+    Info (12134): Parameter "lpm_width" = "32"
+    Info (12134): Parameter "lpm_widthu" = "13"
+    Info (12134): Parameter "lpm_widthu_r" = "15"
+    Info (12134): Parameter "lpm_width_r" = "8"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "rdsync_delaypipe" = "4"
+    Info (12134): Parameter "read_aclr_synch" = "OFF"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+    Info (12134): Parameter "write_aclr_synch" = "OFF"
+    Info (12134): Parameter "wrsync_delaypipe" = "4"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dcfifo_d9n1.tdf
+    Info (12023): Found entity 1: dcfifo_d9n1
+Info (12128): Elaborating entity "dcfifo_d9n1" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_gray2bin_aib.tdf
+    Info (12023): Found entity 1: a_gray2bin_aib
+Info (12128): Elaborating entity "a_gray2bin_aib" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_gray2bin_aib:rdptr_g_gray2bin"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_877.tdf
+    Info (12023): Found entity 1: a_graycounter_877
+Info (12128): Elaborating entity "a_graycounter_877" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_877:rdptr_g1p"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_5lc.tdf
+    Info (12023): Found entity 1: a_graycounter_5lc
+Info (12128): Elaborating entity "a_graycounter_5lc" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|a_graycounter_5lc:wrptr_g1p"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sd11.tdf
+    Info (12023): Found entity 1: altsyncram_sd11
+Info (12128): Elaborating entity "altsyncram_sd11" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_d87.tdf
+    Info (12023): Found entity 1: decode_d87
+Info (12128): Elaborating entity "decode_d87" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram|decode_d87:decode12"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_t28.tdf
+    Info (12023): Found entity 1: mux_t28
+Info (12128): Elaborating entity "mux_t28" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|altsyncram_sd11:fifo_ram|mux_t28:mux13"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_ue9.tdf
+    Info (12023): Found entity 1: dffpipe_ue9
+Info (12128): Elaborating entity "dffpipe_ue9" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_ue9:rs_brp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_se9.tdf
+    Info (12023): Found entity 1: dffpipe_se9
+Info (12128): Elaborating entity "dffpipe_se9" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|dffpipe_se9:rs_bwp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_uld.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_uld
+Info (12128): Elaborating entity "alt_synch_pipe_uld" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_te9.tdf
+    Info (12023): Found entity 1: dffpipe_te9
+Info (12128): Elaborating entity "dffpipe_te9" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_uld:rs_dgwp|dffpipe_te9:dffpipe16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_vld.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_vld
+Info (12128): Elaborating entity "alt_synch_pipe_vld" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_ve9.tdf
+    Info (12023): Found entity 1: dffpipe_ve9
+Info (12128): Elaborating entity "dffpipe_ve9" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|alt_synch_pipe_vld:ws_dgrp|dffpipe_ve9:dffpipe19"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_r76.tdf
+    Info (12023): Found entity 1: cmpr_r76
+Info (12128): Elaborating entity "cmpr_r76" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cmpr_r76:rdempty_eq_comp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_t76.tdf
+    Info (12023): Found entity 1: cmpr_t76
+Info (12128): Elaborating entity "cmpr_t76" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cmpr_t76:rdfull_eq_comp"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_64e.tdf
+    Info (12023): Found entity 1: cntr_64e
+Info (12128): Elaborating entity "cntr_64e" for hierarchy "crossfifo:cc|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_d9n1:auto_generated|cntr_64e:cntr_b"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "FTDI_rd_n" is stuck at VCC
+    Warning (13410): Pin "FTDI_siwua" is stuck at VCC
+    Warning (13410): Pin "FTDI_oe_n" is stuck at VCC
+    Warning (13410): Pin "FTDI_pwrsav_n" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "FTDI_rx_full_n"
+Info (21057): Implemented 478 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 400 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 580 megabytes
+    Info: Processing ended: Sun Jun 28 20:28:31 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+

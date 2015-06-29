@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Jun 28 20:28:49 2015
+Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
+Revision Name : snes_cast
+Top-level Entity Name : snes_cast_top
+Family : Cyclone IV E
+Device : EP4CE22F17C8
+Timing Models : Final
+Total logic elements : 346 / 22,320 ( 2 % )
+    Total combinational functions : 218 / 22,320 ( < 1 % )
+    Dedicated logic registers : 273 / 22,320 ( 1 % )
+Total registers : 273
+Total pins : 46 / 154 ( 30 % )
+Total virtual pins : 0
+Total memory bits : 262,144 / 608,256 ( 43 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
